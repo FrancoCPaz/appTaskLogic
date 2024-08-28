@@ -1,0 +1,7 @@
+{
+  "name": "appTasklogic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
