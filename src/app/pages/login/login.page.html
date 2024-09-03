@@ -1,0 +1,81 @@
+
+<ion-content>
+  <div class="upper">
+    <div class="icon ion-text-center">
+      <ion-icon  name="globe-outline"></ion-icon>
+    </div>
+    <p class="login ion-text-center" >TaskLogic</p>
+  </div>
+
+  <div class="middle">
+    <div class="box">
+
+      <form #loginForm="ngForm">
+        <p>ingresar con tu cuenta</p>
+        <!-- email -->
+        <ion-item>
+          <ion-label position = "floating">Email</ion-label>
+          <ion-input 
+          [type]="email" 
+          placeholder="" 
+          name="email" 
+          #email="ngModel"
+          [(ngModel)]="login.email"
+          required email></ion-input>
+          <ion-icon 
+          class="ion-align-self-center"
+          slot="end" 
+          name=""></ion-icon>
+        </ion-item>
+        
+        <div *ngIf="email.invalid && email.touched">
+          <ion-text color="danger" class="text-center">
+            <h4 style="padding-left: 20px;
+            margin-top: 10px;">ingresar correo</h4>
+          </ion-text>
+        </div>
+        
+
+        <!-- clave -->
+        <!-- clave -->
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            [type]="type ? 'password' : 'text'"
+            placeholder=""
+            name="password"
+            #password="ngModel"
+            [(ngModel)]="login.password"
+            required>
+          </ion-input>
+          <ion-icon
+            class="ion-align-self-center"
+            slot="end"
+            name="eye-outline"
+            (click)="changeType()">
+          </ion-icon>
+        </ion-item>
+                
+        <div *ngIf="password.invalid && password.touched">
+          <ion-text color="denger text-center">
+            <h4 style="padding-left: 20px;
+            margin-top: 10px;">ingresar su clave</h4>
+          </ion-text>
+        </div>
+        
+        <!-- 
+        <p id="forgetPassword" (click)="goToForget()">olvide la clave</p>
+        <div class="btn"></div>
+         <ion-button (click)="goToHome()"
+          [disabled] ="loginForm.invalid">
+          login
+          </ion-button> -->
+        
+        
+      </form>
+    </div>
+
+  </div>
+
+
+</ion-content>
